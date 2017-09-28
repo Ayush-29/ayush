@@ -20,7 +20,8 @@ public class Solution {
       return dup;
 	}
 }
-O(N)
+O(N), HashMap allows duplicates indexes and null values, 
+on encountering the duplicacy , it replaces the previous one. If no mapping it returns null on get()......
 public class Solution {
 	// DO NOT MODIFY THE LIST
 	public int repeatedNumber(final List<Integer> a) {
