@@ -13,10 +13,16 @@ public class Solution {
             {
                 a=b;
             }
-             if(b<0) b=0; // important , not above a<b if, else -500 imput would give 0 answer.
+             if(b<0) b=0; // important , not above if(a<b), else -500 input would give 0 answer.
         }
         return a;
         }
+        
+        publics static void main(String args[])
+        {
+        int arr[]={-3,2-1,9,7,-10};
+        System.out.println(maxSubArray(arr));
         }
+ }
         Time- O(n)
         Space- O(n)
