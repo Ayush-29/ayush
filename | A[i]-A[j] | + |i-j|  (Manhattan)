@@ -1,0 +1,46 @@
+public class Solution {
+    public int maxArr(int[] A) {                        //Time =O(n*n)
+                                                      /*  int max=0;
+                                                        int a=0;
+                                                        for(int i=0;i<A.length;i++)
+                                                        {
+                                                            for(int j=i;j<A.length;j++)
+                                                            {
+                                                                a=Math.abs(A[i]-A[j]) + Math.abs(i-j);
+                                                                if(a>max)
+                                                                {
+                                                                    max=a;
+                                                                }
+                                                            }
+                                                        }
+
+                                                        return max;
+                                                        */
+       // Time O(n) by using manhattan distance                                                
+        int n1= A.length;
+        ArrayList<Integer> nos= new ArrayList<Integer>();
+        for(int i=0;i<n1;i++)
+        {
+            nos.add(A[i]);
+        }
+         int n=nos.size();
+         int max1=nos.get(0);
+         int max2=nos.get(0);
+         int min1=nos.get(0),min2=nos.get(0),ans=0;
+
+  for(int i=0;i<n; i++){
+    max1=Math.max(max1, nos.get(i)+i);
+    max2=Math.max(max2, nos.get(i)-i);
+    min1=Math.min(min1,  nos.get(i)+i);
+    min2=Math.min(min2, nos.get(i)-i);
+  }
+
+   ans = Math.max(ans, (max2 - min2));
+   ans = Math.max(ans, (max1 - min1));
+
+   return ans;
+        
+        
+       
+    }
+}
