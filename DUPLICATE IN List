@@ -1,5 +1,5 @@
 
-O(nLogN) Solution due to Arrays.sort...
+M-1------O(nLogN) Solution due to Arrays.sort...
 public class Solution {
 	// DO NOT MODIFY THE LIST
 	public int repeatedNumber(final List<Integer> a) {
@@ -20,7 +20,7 @@ public class Solution {
       return dup;
 	}
 }
-O(N), HashMap allows duplicates indexes and null values, 
+M-2--------O(N), HashMap allows duplicates indexes and null values, 
 on encountering the duplicacy , it replaces the previous one. If no mapping it returns null on get()......
 public class Solution {
 	// DO NOT MODIFY THE LIST
@@ -39,4 +39,43 @@ public class Solution {
 	    return -1;
 	    
 	}
+}
+M-3--------if array of length n with values between 0 to n-1.........
+O(n), finding all duplicates
+
+#include <iostream>
+using namespace std;
+ 
+// function to find repeating elements
+void printRepeating( int arr[], int n)
+{
+    // First check all the values that are
+    // present in an array then go to that
+    // values as indexes and increment by
+    // the size of array
+    for (int i = 0; i < n; i++)
+    {
+        int index = arr[i] % n;
+        arr[index] += n;
+    }
+ 
+    // Now check which value exists more
+    // than once by dividing with the size
+    // of array
+    for (int i = 0; i < n; i++)
+    {
+        if ((arr[i]/n) > 1)
+            cout << i << " ";
+    }
+}
+ 
+// Driver's code
+int main()
+{
+    int arr[] = {1, 6, 3, 1, 3, 6, 6};
+    int arr_size = sizeof(arr)/sizeof(arr[0]);
+ 
+    cout << "The repeating elements are: \n";
+    printRepeating( arr, arr_size);
+    return 0;
 }
