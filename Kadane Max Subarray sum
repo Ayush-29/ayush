@@ -1,0 +1,22 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int maxSubArray(final int[] A) {
+        
+        int size =A.length;
+        int a=Integer.MIN_VALUE,b=0;
+        for(int i=0;i<size;i++)
+        {
+            b= b + A[i];
+           
+            
+             if(a<b)
+            {
+                a=b;
+            }
+             if(b<0) b=0; // important , not above a<b if, else -500 imput would give 0 answer.
+        }
+        return a;
+        }
+        }
+        Time- O(n)
+        Space- O(n)
