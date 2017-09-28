@@ -1,0 +1,41 @@
+
+O(nLogN) Solution due to Arrays.sort...
+public class Solution {
+	// DO NOT MODIFY THE LIST
+	public int repeatedNumber(final List<Integer> a) {
+	   int c[]= new int[a.size()];
+	   int dup=-1;
+      for(int i=0;i<a.size();i++)
+      {
+          c[i]=a.get(i);
+      }
+      Arrays.sort(c);
+      for(int i=0;i<c.length-1;i++)
+      {
+          if(c[i]==c[i+1])
+          {
+              dup= c[i];
+          }
+      }
+      return dup;
+	}
+}
+O(N)
+public class Solution {
+	// DO NOT MODIFY THE LIST
+	public int repeatedNumber(final List<Integer> a) {
+	    
+	    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+	    
+	    for (int i = 0; i < a.size(); i++){
+	        if (map.get(a.get(i)) == null){
+	            map.put(a.get(i), i);
+	        }else{
+	            return a.get(i);
+	        }
+	    }
+	    
+	    return -1;
+	    
+	}
+}
