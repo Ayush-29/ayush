@@ -39,8 +39,6 @@ public class Solution {
    ans = Math.max(ans, (max1 - min1));
 
    return ans;
-        
-        
        
     }
 }
